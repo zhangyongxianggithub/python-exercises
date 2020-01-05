@@ -7,6 +7,7 @@ print(','.join(l))
 for num in range(2000, 3201):
     if num % 7 == 0 and num % 5 != 0:
         print(num, end=',')
+print()
 
 while True:
     reply = input('type some world:')
@@ -15,7 +16,7 @@ while True:
     try:
         int(reply)
     except:
-        print('Bad input！'*8)
+        print('Bad input！' * 8)
     else:
-        print(int(reply)**2)
+        print('the power result is', int(reply) ** 2)
 print('Bye!!!!')
