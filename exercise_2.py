@@ -15,15 +15,18 @@ while i <= n:
     fact *= i
     i += 1
 print(fact)
-#use for loop
+# use for loop
 n = int(input('input a number: '))
 fact = 1
-for i in range(1,n+1):
+for i in range(1, n + 1):
     fact *= i
 print(fact)
-#use lambda
+# use lambda
 n = int(input('input a number: '))
 fact = 1
-def short_fact(x):return 1 if x<=1 else x*short_fact(x-1)
-print(short_fact(n))
 
+
+def short_fact(x): return 1 if x <= 1 else x * short_fact(x - 1)
+
+
+print(short_fact(n))
