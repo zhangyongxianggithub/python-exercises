@@ -15,7 +15,7 @@ The output of the program should be:
 
 18,22,24
 '''
-import math
+from math import *
 numbers = input('input numbers comma-separated: ')
 for i in numbers.split(','):
     print(round((float(i)*50*2/30)**0.5), end=',')
@@ -28,5 +28,12 @@ h = 30
 value = []
 items = [x for x in input('input numbers comma-separated: ').split(',')]
 for d in items:
-    value.append(str(int(round(math.sqrt(2*c*float(d)/h)))))
+    value.append(str(int(round(sqrt(2*c*float(d)/h)))))
 print(','.join(value))
+
+C, H = 50, 30
+def calc(D):
+    return sqrt(2*C*D/H)
+D=input('inout numbers comma-separated: ').split(',')
+D=[str(round(calc(int(i)))) for i in D]
+print(','.join(D))
