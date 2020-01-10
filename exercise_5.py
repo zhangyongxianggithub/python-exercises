@@ -1,4 +1,4 @@
-'''
+"""
 Question:
 Define a class which has at least two methods:
 
@@ -8,13 +8,17 @@ Also please include simple test function to test the class methods.
 
 Hints:
 Use init method to construct some parameters
-'''
+"""
+
+
 class Exercise5(object):
     def getString(self):
-        self.worlds=input('input some world: ')
+        self.worlds = input('input some world: ')
+
     def printString(self):
-        print('print the worlds',self.worlds.upper())
-e=Exercise5()
+        print('print the worlds', self.worlds.upper())
+
+
+e = Exercise5()
 e.getString()
 e.printString()
-
