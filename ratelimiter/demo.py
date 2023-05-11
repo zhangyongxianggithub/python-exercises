@@ -1,4 +1,6 @@
 import datetime
+import string
+import random
 
 from ratelimiter import RateLimiter
 
@@ -9,4 +11,6 @@ def do_something():
 
 
 while True:
+    print(datetime.datetime.now(), '\n')
+    print(''.join(random.sample(string.ascii_letters + string.digits, 8)))
     do_something()
