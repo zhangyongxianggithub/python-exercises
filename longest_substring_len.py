@@ -10,8 +10,8 @@
 tring = input('input string: ')
 max = 0
 res = 0
-int start = 0
-int end = 0
+start = 0
+end = 0
 for s in string:
     if not s in string[start:end]:
         end += 1
