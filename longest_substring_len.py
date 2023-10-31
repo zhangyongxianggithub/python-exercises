@@ -7,6 +7,8 @@
 输出: 3 
 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
 """
+import string
+
 tring = input('input string: ')
 max = 0
 res = 0
