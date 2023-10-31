@@ -14,6 +14,7 @@ handler.setLevel(INFO)
 handler.setFormatter(Formatter(
     fmt='%(asctime)s %(levelname)s %(process)d --- [%(threadName)s] %(pathname)s(%(lineno)d): %(message)s',
     datefmt='%Y-%m-%d %H:%M:%S'))
+print(logger.isEnabledFor(logging.INFO))
 logger.addHandler(handler)
 logger.info('ddddd%s', 'aaa')
 logger.info('ddddddd%s', 'aaa')
