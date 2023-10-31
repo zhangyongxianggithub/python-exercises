@@ -16,7 +16,8 @@ def truncate_index(host: str, port: int, index: str, user: str = None, passwd: s
             headers = {'Content-Type': 'application/json'}
             if user is not None and passwd is not None:
                 headers['Authorization'] = 'Basic ' + base64.encodestring(user + ':' + passwd).decode('ascii')
-            conn.request(method='POST', url='/' + index + '/_delete_by_query', body=delete_body, headers=headers)
+            conn.request(method='POST', url='/' + index + '/_delete_by_query', body='{"query" : {  "match_all" : {}}}',
+                         headers=headers)
             response = conn.getresponse()
             if response.status == HTTPStatus.OK:
                 logging.info('clear es index %s in server %s:%d, response: %s', index, host, port,
@@ -36,7 +37,7 @@ def truncate_index(host: str, port: int, index: str, user: str = None, passwd: s
 
 
 if __name__ == '__main__':
-    # truncate_index('bjdd-igu-bce07.bjdd.baidu.com', 8200, 'schema', None, None)
+    truncate_index('127.0.0.1', 8200, 'schema', None, None)
     indices = ('tag', 'schemav2', 'contentv2')
     logging.info('starting clear indices %s', indices)
     print('/{index}/_delete_by_query'.format(index="aaa"))
